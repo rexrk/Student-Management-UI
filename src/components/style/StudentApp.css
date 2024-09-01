@@ -1,0 +1,21 @@
+label, input, button {
+    margin: 10px;
+    padding: 5px;
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 90%;
+    height: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+  }
+  
+  .text-danger {
+    margin-top: 5px;
+    font-size: 0.9em;
+  }
+  

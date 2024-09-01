@@ -1,4 +1,5 @@
 import './App.css';
+import StudentApp from './components/StudentApp';
 
 function App() {
   return (
