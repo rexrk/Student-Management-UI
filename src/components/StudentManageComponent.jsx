@@ -24,7 +24,7 @@ export default function StudentManageComponent() {
   useEffect(() => retrieveStudent(), [id]);
 
   function retrieveStudent() {
-    if (id != -1) {
+    if (id !== -1) {
       retrieveStudentApi(id)
         .then((response) => {
           setName(response.data.name);
@@ -44,10 +44,10 @@ export default function StudentManageComponent() {
       address: values.address,
       pinCode: values.pinCode,
     };
-
+    console.log(student)
     if (id == -1) {
       createStudentApi(student)
-        .then(() => navigate("/students"))
+        .then((response) => navigate("/students"))
         .catch((error) => console.log(error));
     } else {
       updateStudentApi(id, student)
