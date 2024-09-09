@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "react-app",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://104.197.67.1:8080",

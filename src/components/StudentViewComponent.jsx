@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { retrieveStudentApi } from "./api/StudentsApiService";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./security/AuthContext";
+import { retrieveStudentApi, deleteStudentApi } from "./api/StudentsApiService";
 import "./style/StudentApp.css";
 
 export default function StudentViewComponent() {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { username, id } = useAuth();
 
-  // State variables for student data
+  // student data
   const [studentData, setStudentData] = useState({
     name: "",
     contactDetails: "",
     address: "",
-    pinCode: ""
+    pinCode: "",
   });
 
   useEffect(() => {
     retrieveStudent();
-  }, [id]);
+  }, []);
 
   function retrieveStudent() {
-    retrieveStudentApi(id)
+    retrieveStudentApi(username, id)
       .then((response) => {
         setStudentData(response.data);
       })
@@ -28,7 +29,7 @@ export default function StudentViewComponent() {
   }
 
   function handleEdit() {
-    navigate(`/student-manage/${id}`);
+    navigate(`/edit/${username}/${id}`);
   }
 
   return (
@@ -87,6 +88,8 @@ export default function StudentViewComponent() {
           >
             Edit
           </button>
+
+
         </div>
       </div>
     </div>

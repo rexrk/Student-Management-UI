@@ -47,6 +47,8 @@ function LoginComponent() {
                 <div>
                     <button type="button" name="login" onClick={handleSubmit}>login</button>
                 </div>
+                <a href='/register'>Dont have an account already?</a>
+
             </div>
         </div>
     )

@@ -31,8 +31,8 @@ function HeaderComponent() {
                 </li>
                 <li className="nav-item">
                   {isAuthenticated && (
-                    <Link className="nav-link" to="/students/">
-                      Students
+                    <Link className="nav-link" to={`/my-account/${authContext.id}`}>
+                      My Account
                     </Link>
                   )}
                 </li>
@@ -42,7 +42,7 @@ function HeaderComponent() {
               <li className="nav-item">
                 {!isAuthenticated && (
                   <Link className="nav-link" to="/login">
-                    Login
+                    Login/Register
                   </Link>
                 )}
               </li>

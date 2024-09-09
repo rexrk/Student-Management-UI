@@ -1,12 +1,8 @@
 import { apiClient } from "./ApiClient";
 
-export const retrieveAllStudentsApi = () => apiClient.get(`/students/all`);
+export const deleteStudentApi = (username, id) => apiClient.delete(`/students/${username}/${id}`);
 
-export const deleteStudentApi = (id) => apiClient.delete(`/students/${id}`);
+export const retrieveStudentApi = (username, id) => apiClient.get(`/students/${username}/${id}`);
+export const retrieveStudentWithNameApi = (username) => apiClient.get(`/students/${username}`);
 
-//to use
-export const retrieveStudentApi = (id) => apiClient.get(`/students/${id}`);
-
-export const updateStudentApi = (id, student) => apiClient.put(`/students/${id}`, student);
-
-export const createStudentApi = (student) => apiClient.post(`/students`, student);
+export const updateStudentApi = (username, id, student) => apiClient.put(`/students/${username}/${id}`, student);
